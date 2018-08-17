@@ -88,18 +88,5 @@ export default Service.extend(serviceMixin, {
   shareItems (/* options */) {
     deprecate('use .shareItemWithGroup(...) or .setAccess(...)', false, {id: 'shareItemsDeprecation', until: '10.0.0'});
     return reject('sharing-service::shareItemsWithControl is Deprecated. Use .shareItemWithGroup(...) or .setAccess(...)');
-  },
-
-  /**
-   * Shared logic for POST operations
-   */
-  _post (urlPath, data, portalOpts) {
-    const options = {
-      method: 'POST',
-      data: data
-    };
-
-    return this.request(urlPath, options, portalOpts);
-  },
-
+  }
 });
