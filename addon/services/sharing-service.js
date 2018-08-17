@@ -1,11 +1,9 @@
 import { deprecate } from '@ember/application/deprecations';
-import { A } from '@ember/array';
-import { debug } from '@ember/debug';
-import { reject, resolve } from 'rsvp';
+import { reject } from 'rsvp';
 import Service, { inject as service } from '@ember/service';
 import serviceMixin from '../mixins/service-mixin';
-import { 
-  setItemAccess, 
+import {
+  setItemAccess,
   shareItemWithGroup,
   unshareItemWithGroup,
 } from '@esri/arcgis-rest-sharing';
@@ -37,7 +35,6 @@ export default Service.extend(serviceMixin, {
    * Share an item with a group, optionally with item control
    */
   shareWithGroup (owner, itemId, groupId, confirmItemControl = false, portalOpts) {
-    debugger;
     const args = this.addOptions({
       id: itemId,
       owner,
@@ -47,7 +44,7 @@ export default Service.extend(serviceMixin, {
 
     return shareItemWithGroup(args);
   },
-  
+
   /**
    * Unshare item with a group
    */
@@ -56,7 +53,7 @@ export default Service.extend(serviceMixin, {
       id: itemId,
       owner,
       groupId,
-      confirmItemControl
+      confirmItemControl: false
     }, portalOpts);
 
     return unshareItemWithGroup(args);
