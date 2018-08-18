@@ -91,6 +91,8 @@
   },
   "homepage": "https://github.com/Esri/ember-arcgis-portal-services#readme",
   "husky": {
-    "hooks": { "pre-commit": "npm run lint:js" }
+    "hooks": {
+      "pre-commit": "npm run lint:js"
+    }
   }
 }
